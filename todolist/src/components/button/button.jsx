@@ -4,11 +4,11 @@ import './button.css';
 
 const Button = (props) => {
     return (
-        <button>
-            <Link to={props.to} className='btn'>
+        <Link to={props.to} className='btn'>
+            <button className='btn'>
                 {props.text}
-            </Link>
-        </button>
+            </button>
+        </Link>
     )
 }
 export default Button;
