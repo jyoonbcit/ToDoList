@@ -4,9 +4,11 @@ import './button.css';
 
 const Button = (props) => {
     return (
-        <Link to={props.to} className='btn'>
-            {props.text}
-        </Link>
+        <button>
+            <Link to={props.to} className='btn'>
+                {props.text}
+            </Link>
+        </button>
     )
 }
 export default Button;
