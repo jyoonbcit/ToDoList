@@ -11,9 +11,8 @@ const App = () => {
     <div className='App'>
       <BrowserRouter>
         <Header />
-        <Button text='Description1' />
-        <Button text='Description2' />
-        <Button text='Description3' />
+        <Button to='/' text='Homepage' />
+        <Button to='/submission' text='Add Task' />
         <Routes>
           <Route path='/' element={<Overview />} />
           <Route path='/submission' element={<Submission />} />
