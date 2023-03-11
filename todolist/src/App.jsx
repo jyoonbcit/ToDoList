@@ -10,12 +10,12 @@ const App = () => {
   return (
     <div className='App'>
       <BrowserRouter>
+        <Header />
+        <Button text='Description1' />
+        <Button text='Description2' />
+        <Button text='Description3' />
         <Routes>
-          <Route path='/' element={<Header />} />
           <Route path='/' element={<Overview />} />
-          <Route path='/' element={<Button text='Description1' />} />
-          <Route path='/' element={<Button text='Description2' />} />
-          <Route path='/' element={<Button text='Description3' />} />
           <Route path='/submission' element={<Submission />} />
         </Routes>
       </BrowserRouter>
