@@ -7,6 +7,7 @@ const Overview = () => {
     function removeItem() {
         var item = document.getElementById('removeItem').value;
         localStorage.removeItem(item);
+        window.location.reload();
     }
 
     return (
