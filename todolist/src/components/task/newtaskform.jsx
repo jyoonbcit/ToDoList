@@ -5,15 +5,21 @@ import { Link } from 'react-router-dom';
 
 function NewTaskForm() {
 
-    function populate(title, description) {
-        localStorage.setItem(title, description);
+    function populate(title, description, dueDate) {
+        const task = {
+            title: title,
+            description: description,
+            dueDate: dueDate
+        };
+        localStorage.setItem(title, JSON.stringify(task));
         console.log(JSON.stringify(localStorage));
     }
 
     function submitBtn() {
         var title = document.getElementById('title').value;
         var description = document.getElementById('description').value;
-        populate(title, description);
+        var dueDate = document.getElementById('due-date').value;
+        populate(title, description, dueDate);
     }
 
     // get current date in Day Month Date Year format
