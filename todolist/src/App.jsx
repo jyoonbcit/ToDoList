@@ -17,7 +17,7 @@ const App = () => {
           <Button to='/submission' text='Add Task' />
         </div>
         <Routes>
-          <Route path='/' element={<Overview />} />
+          <Route path='/overview' element={<Overview />} />
           <Route path='/submission' element={<Submission />} />
         </Routes>
       </BrowserRouter>

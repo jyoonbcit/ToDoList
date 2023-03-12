@@ -4,7 +4,9 @@ const Overview = () => {
 
     return (
         <>
-            {document.getElementById('storageItems').innerHTML = JSON.stringify(localStorage)}
+            <p id='storageItems'>
+                {JSON.stringify(localStorage)}
+            </p>
         </>
     )
 }
