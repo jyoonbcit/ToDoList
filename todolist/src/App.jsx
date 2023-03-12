@@ -14,6 +14,7 @@ const App = () => {
       <BrowserRouter>
         <div className="btn-wrapper">
           <Button to='/' text='Homepage' />
+          <Button to='/overview' text='Current Tasks' />
           <Button to='/submission' text='Add Task' />
         </div>
         <Routes>
