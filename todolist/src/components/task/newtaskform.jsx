@@ -1,9 +1,24 @@
 import Card from '../ui/card';
 import classes from './newtaskform.module.css';
+import Overview from '../../pages/overview';
 
 function NewTaskForm() {
+
+    function populate(title, description) {
+        localStorage.setItem(title, description);
+        console.log(JSON.stringify(localStorage));
+        <Overview />
+    }
+
+    function submitBtn() {
+        var title = document.getElementById('title').value;
+        var description = document.getElementById('description').value;
+        populate(title, description);
+    }
+
     // get current date in Day Month Date Year format
     const currentDate = new Date().toDateString();
+
     return (
         <Card>
             <form className={classes.form}>
@@ -24,11 +39,10 @@ function NewTaskForm() {
                     <input type='datetime-local' id='due-date' required />
                 </div>
                 <div className={classes.actions}>
-                    <button>Add Task</button>
+                    <button onClick={submitBtn}>Add Task</button>
                 </div>
             </form>
         </Card>
     );
 }
-
 export default NewTaskForm;
