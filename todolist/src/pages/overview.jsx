@@ -1,4 +1,5 @@
 import React from 'react';
+import './overview.css';
 
 const Overview = () => {
     const items = Object.entries(localStorage);
