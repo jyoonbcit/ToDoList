@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Overview = () => {
+
     return (
-        <header>
-            <h1>Something</h1>
-        </header>
+        <>
+            {document.getElementById('storageItems').innerHTML = JSON.stringify(localStorage)}
+        </>
     )
 }
 export default Overview

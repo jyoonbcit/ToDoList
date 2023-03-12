@@ -1,6 +1,7 @@
 import Card from '../ui/card';
 import classes from './newtaskform.module.css';
 import { Link } from 'react-router-dom';
+import Overview from '../../pages/overview';
 
 
 function NewTaskForm() {
@@ -13,6 +14,7 @@ function NewTaskForm() {
         };
         localStorage.setItem(title, JSON.stringify(task));
         console.log(JSON.stringify(localStorage));
+        <Overview />;
     }
 
     function submitBtn() {
@@ -44,7 +46,7 @@ function NewTaskForm() {
                     <label htmlFor='due-date'>Due Date</label>
                     <input type='datetime-local' id='due-date' required />
                 </div>
-                <Link to='./overview' className='btn'>
+                <Link to='../overview' className='btn'>
                     <div className={classes.actions}>
                         <button onClick={submitBtn}>Add Task</button>
                     </div>
