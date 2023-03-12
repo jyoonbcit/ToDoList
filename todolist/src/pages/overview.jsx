@@ -1,13 +1,31 @@
 import React from 'react';
 
 const Overview = () => {
+    const items = Object.entries(localStorage);
 
     return (
-        <>
-            <p id='storageItems'>
-                {JSON.stringify(localStorage)}
-            </p>
-        </>
-    )
-}
-export default Overview
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {items.map(([key, value]) => {
+                    const { title, description, dueDate } = JSON.parse(value);
+                    return (
+                        <tr key={key}>
+                            <td>{title}</td>
+                            <td>{description}</td>
+                            <td>{dueDate}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
+};
+
+export default Overview;
