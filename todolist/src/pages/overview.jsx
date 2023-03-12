@@ -4,6 +4,11 @@ import './overview.css';
 const Overview = () => {
     const items = Object.entries(localStorage);
 
+    function removeItem() {
+        var item = document.getElementById('removeItem').value;
+        localStorage.removeItem(item);
+    }
+
     return (
         <table>
             <thead>
@@ -17,13 +22,19 @@ const Overview = () => {
                 {items.map(([key, value]) => {
                     const { title, description, dueDate } = JSON.parse(value);
                     return (
-                        <tr key={key}>
-                            <td>{title}</td>
-                            <td>{description}</td>
-                            <td>{dueDate}</td>
-                        </tr>
+                        <>
+                            <tr key={key}>
+                                <td>{title}</td>
+                                <td>{description}</td>
+                                <td>{dueDate}</td>
+                            </tr>
+                        </>
                     );
                 })}
+
+                <label for='removeItem'> Enter name of item to remove: </label>
+                <input type='text' name='removeItem' id='removeItem'></input>
+                <button id='submitRemove' onClick={removeItem}> Remove </button>
             </tbody>
         </table>
     );
