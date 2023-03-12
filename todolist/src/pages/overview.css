@@ -3,3 +3,23 @@ td {
     padding-right: 5vh;
     text-align: center;
 }
+
+#removeItemLabel {
+    float: left;
+    padding-right: 1vh;
+
+}
+
+#removeItem {
+    float: left;
+    padding: 0.5rem;
+}
+
+#submitRemove {
+    float: left;
+    padding: 0.5rem;
+}
+
+#removeDiv {
+    padding-top: 3vh;
+}

@@ -10,33 +10,36 @@ const Overview = () => {
     }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Due Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                {items.map(([key, value]) => {
-                    const { title, description, dueDate } = JSON.parse(value);
-                    return (
-                        <>
-                            <tr key={key}>
-                                <td>{title}</td>
-                                <td>{description}</td>
-                                <td>{dueDate}</td>
-                            </tr>
-                        </>
-                    );
-                })}
-
-                <label for='removeItem'> Enter name of item to remove: </label>
+        <>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {items.map(([key, value]) => {
+                        const { title, description, dueDate } = JSON.parse(value);
+                        return (
+                            <>
+                                <tr key={key}>
+                                    <td>{title}</td>
+                                    <td>{description}</td>
+                                    <td>{dueDate}</td>
+                                </tr>
+                            </>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <div id='removeDiv'>
+                <label for='removeItem' id='removeItemLabel'> Enter name of item to remove: </label>
                 <input type='text' name='removeItem' id='removeItem'></input>
                 <button id='submitRemove' onClick={removeItem}> Remove </button>
-            </tbody>
-        </table>
+            </div>
+        </>
     );
 };
 
