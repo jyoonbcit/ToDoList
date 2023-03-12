@@ -1,13 +1,13 @@
 import Card from '../ui/card';
 import classes from './newtaskform.module.css';
-import Overview from '../../pages/overview';
+import { Link } from 'react-router-dom';
+
 
 function NewTaskForm() {
 
     function populate(title, description) {
         localStorage.setItem(title, description);
         console.log(JSON.stringify(localStorage));
-        <Overview />
     }
 
     function submitBtn() {
@@ -38,9 +38,11 @@ function NewTaskForm() {
                     <label htmlFor='due-date'>Due Date</label>
                     <input type='datetime-local' id='due-date' required />
                 </div>
-                <div className={classes.actions}>
-                    <button onClick={submitBtn}>Add Task</button>
-                </div>
+                <Link to='./overview' className='btn'>
+                    <div className={classes.actions}>
+                        <button onClick={submitBtn}>Add Task</button>
+                    </div>
+                </Link>
             </form>
         </Card>
     );
