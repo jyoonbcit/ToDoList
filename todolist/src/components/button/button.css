@@ -1,5 +1,23 @@
+.btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
 .btn {
-    margin: 3vh;
-    font-size: 4vh;
-    width: 50%
+    background-color: purple;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.btn:last-child {
+    margin-right: 0;
 }

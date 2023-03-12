@@ -12,8 +12,10 @@ const App = () => {
       <Header />
 
       <BrowserRouter>
-        <Button to='/' text='Homepage' />
-        <Button to='/submission' text='Add Task' />
+        <div className="btn-wrapper">
+          <Button to='/' text='Homepage' />
+          <Button to='/submission' text='Add Task' />
+        </div>
         <Routes>
           <Route path='/' element={<Overview />} />
           <Route path='/submission' element={<Submission />} />
